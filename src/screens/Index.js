@@ -1,9 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { FlatList } from 'react-native'
 import { connect } from 'react-redux'
 import styled from 'styled-components/native'
 import { Colors, IconButton } from 'react-native-paper'
 import {
+	getForecastWeather,
 	getGeolocation,
 	removeCityById,
 	searchCity,
@@ -21,7 +23,8 @@ const Container = styled.View`
 
 const mapStateToProps = state => ({
 	cities: state.cities,
-	loading: state.loading
+	loading: state.loading,
+	redirect: state.redirect
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -35,8 +38,11 @@ const mapDispatchToProps = dispatch => ({
 		dispatch(updateWeather(id))
 	},
 	removeCity: id => {
-		console.log(id)
 		dispatch(removeCityById(id))
+	},
+	getForecast: city => {
+		const { id, coord } = city
+		dispatch(getForecastWeather(id, coord.lat, coord.lon))
 	}
 })
 
@@ -47,15 +53,20 @@ const Index = ({
 	loading,
 	navigation,
 	updateWeatherById,
-	removeCity
+	removeCity,
+	getForecast,
+	redirect
 }) => {
 	useEffect(() => {
-		geolocate()
-	}, [geolocate])
+		geolocate() // dispatch getGeolocation
+	}, [])
 
-	const getForecast = city => {
-		navigation.navigate('Forecast', { city })
-	}
+	useEffect(() => {
+		// si store.redirect es enviado
+		if (redirect && redirect.screen) {
+			navigation.navigate(redirect.screen, redirect.params) // navigate to screen
+		}
+	}, [redirect])
 
 	const [showSearchBox, setShowSearchBox] = useState(false)
 
@@ -66,16 +77,16 @@ const Index = ({
 					icon={showSearchBox ? 'close' : 'map-search'}
 					color={Colors.grey800}
 					size={4 * 7}
-					onPress={() => setShowSearchBox(v => !v)}
+					onPress={() => setShowSearchBox(v => !v)} // comportamiento del Componente navigation header right
 				/>
 			)
 		})
-	}, [navigation, showSearchBox])
+	}, [showSearchBox])
 
 	return (
 		<Container>
-			{showSearchBox && <SearchBox onSearch={search} />}
 			{loading && <Loading />}
+			{showSearchBox && <SearchBox onSearch={search} />}
 			<FlatList
 				data={cities}
 				keyExtractor={item => item.id}
@@ -85,9 +96,9 @@ const Index = ({
 						main={item.main}
 						weather={item.weather}
 						wind={item.wind}
-						onGetForecast={() => getForecast(item)}
-						onUpdateWeather={() => updateWeatherById(item.id)}
-						onRemove={() => removeCity(item.id)}
+						onGetForecast={() => getForecast(item)} //dispatch actions
+						onUpdateWeather={() => updateWeatherById(item.id)} //dispatch actions
+						onRemove={() => removeCity(item.id)} //dispatch actions
 					/>
 				)}
 			/>
