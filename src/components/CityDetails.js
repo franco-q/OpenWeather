@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components/native'
-import { View } from 'react-native'
 import {
 	Headline,
 	Button,
@@ -25,9 +24,6 @@ const Details = styled.View`
 	flex-direction: row;
 	width: 100%;
 	justify-content: space-around;
-`
-const Header = styled.View`
-	flex-direction: row;
 `
 const Detail = styled.View`
 	align-items: center;
@@ -59,9 +55,7 @@ const CityDetails = ({
 
 	return (
 		<Container>
-			<Header>
-				<Title>{name}</Title>
-			</Header>
+			<Title>{name}</Title>
 			{main && (
 				<>
 					<Headline>{main.temp}°</Headline>

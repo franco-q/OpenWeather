@@ -14,11 +14,6 @@ const Container = styled.View`
 const Title = styled(Headline)`
 	padding: 8px;
 `
-const Error = styled.Text`
-	text-align: center;
-	font-size: 40px;
-	padding: 12px;
-`
 
 const mapStateToProps = (state, props) => ({
 	loading: state.loading,
@@ -45,17 +40,17 @@ const Forecast = ({ route, getForecast, loading, forecast }) => {
 		<Container>
 			{loading ? (
 				<Loading />
-			) : forecast ? (
-				<>
-					<Title>{route.params.city.name}</Title>
-					<FlatList
-						data={forecast.daily.slice(1, 6)}
-						keyExtractor={item => item.dt}
-						renderItem={({ item }) => <ForecastDetails {...item} />}
-					/>
-				</>
 			) : (
-				<Error>:(</Error>
+				forecast && (
+					<>
+						<Title>{route.params.city.name}</Title>
+						<FlatList
+							data={forecast.daily.slice(1, 6)}
+							keyExtractor={item => item.dt}
+							renderItem={({ item }) => <ForecastDetails {...item} />}
+						/>
+					</>
+				)
 			)}
 		</Container>
 	)
