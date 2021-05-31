@@ -3,7 +3,12 @@ import { FlatList } from 'react-native'
 import { connect } from 'react-redux'
 import styled from 'styled-components/native'
 import { Colors, IconButton } from 'react-native-paper'
-import { getGeolocation, searchCity, updateWeather } from '../redux/actions'
+import {
+	getGeolocation,
+	removeCityById,
+	searchCity,
+	updateWeather
+} from '../redux/actions'
 import SearchBox from '../components/SearchBox'
 import CityDetails from '../components/CityDetails'
 import Loading from '../components/Loading'
@@ -28,6 +33,10 @@ const mapDispatchToProps = dispatch => ({
 	},
 	updateWeatherById: id => {
 		dispatch(updateWeather(id))
+	},
+	removeCity: id => {
+		console.log(id)
+		dispatch(removeCityById(id))
 	}
 })
 
@@ -37,7 +46,8 @@ const Index = ({
 	cities,
 	loading,
 	navigation,
-	updateWeatherById
+	updateWeatherById,
+	removeCity
 }) => {
 	useEffect(() => {
 		geolocate()
@@ -77,6 +87,7 @@ const Index = ({
 						wind={item.wind}
 						onGetForecast={() => getForecast(item)}
 						onUpdateWeather={() => updateWeatherById(item.id)}
+						onRemove={() => removeCity(item.id)}
 					/>
 				)}
 			/>

@@ -50,7 +50,8 @@ const CityDetails = ({
 	weather,
 	wind,
 	onGetForecast,
-	onUpdateWeather
+	onUpdateWeather,
+	onRemove
 }) => {
 	const icon =
 		weatherIcons.find(i => weather.some(w => i.id === w.icon)) ||
@@ -141,11 +142,7 @@ const CityDetails = ({
 					onPress={onUpdateWeather}>
 					Actualizar
 				</Button>
-				<Button
-					compact
-					mode="Text"
-					color={Colors.grey900}
-					onPress={() => console.log('Pressed')}>
+				<Button compact mode="Text" color={Colors.grey900} onPress={onRemove}>
 					Borrar
 				</Button>
 			</Footer>

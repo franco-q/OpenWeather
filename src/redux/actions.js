@@ -86,3 +86,9 @@ export const getForecastWeatherFailed = error => ({
 	type: GET_FORECAST_WEATHER_FAILED,
 	error
 })
+
+export const REMOVE_CITY_BY_ID = 'REMOVE_CITY_BY_ID'
+export const removeCityById = id => ({
+	type: REMOVE_CITY_BY_ID,
+	payload: { id }
+})

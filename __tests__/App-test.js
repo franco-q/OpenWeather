@@ -6,25 +6,26 @@
 
 import SagaTester from 'redux-saga-tester'
 import reducers from '../src/redux/reducers'
-import * as api from '../src/api'
 import {
 	watchGetForecastWeather,
 	watchGetGeolocation,
 	watchGetGeolocationSuccess,
 	watchSearchCity,
 	watchUpdateWeather
-} from '.././src/redux/sagas'
+} from '../src/redux/sagas'
 import {
 	getForecastWeather,
 	getForecastWeatherSuccess,
 	getGeolocation,
 	getGeolocationSuccess,
 	getWeatherByGeolocationSuccess,
+	removeCityById,
 	searchCity,
 	searchCitySuccess,
 	updateWeather,
 	updateWeatherSuccess
 } from '../src/redux/actions'
+import * as api from '../src/api'
 
 const mockedGeolocation = {
 	query: '190.191.6.249',
@@ -113,7 +114,7 @@ const mockedOpenWeatherUpdated = {
 	name: 'Mar del Plata',
 	cod: 200
 }
-const mockedOpenWeatherForecast = {
+const mockedForecast = {
 	lat: -38.001,
 	lon: -57.5647,
 	timezone: 'America/Argentina/Buenos_Aires',
@@ -370,31 +371,41 @@ const mockedOpenWeatherForecast = {
 }
 
 describe('Test sagas', () => {
-	test('watchGetGeolocation must be fired when app is mounted', async () => {
+	test('watchGetGeolocation & watchGetGeolocationSuccess fired on init app', async () => {
 		api.getPositionByIp = jest.fn(() => Promise.resolve(mockedGeolocation))
 		api.getWeather = jest.fn(() => Promise.resolve(mockedOpenWeather))
+
 		const sagaTester = new SagaTester({
 			reducers,
 			initialState: { cities: [], loading: true, error: null }
 		})
+
+		// Expected called actions
+		const getGeolocationAction = getGeolocation()
+		const getGeolocationSuccessAction = getGeolocationSuccess(mockedGeolocation)
+		const getWeatherByGeolocationSuccessAction =
+			getWeatherByGeolocationSuccess(mockedOpenWeather)
+
 		sagaTester.start(watchGetGeolocation)
 		sagaTester.start(watchGetGeolocationSuccess)
 
-		// Este dispatch se ejecuta al montarse la aplicacion
-		sagaTester.dispatch(getGeolocation())
+		sagaTester.dispatch(getGeolocationAction) // Fired when Index is mounted
 
-		await sagaTester.waitFor(getGeolocationSuccess().type)
-		await sagaTester.waitFor(getWeatherByGeolocationSuccess().type)
+		await sagaTester.waitFor(getGeolocationSuccessAction.type)
+		await sagaTester.waitFor(getWeatherByGeolocationSuccessAction.type)
 
+		// Called actions
 		expect(sagaTester.getCalledActions()).toEqual([
-			getGeolocation(),
-			getGeolocationSuccess(mockedGeolocation),
-			getWeatherByGeolocationSuccess(mockedOpenWeather)
+			getGeolocationAction,
+			getGeolocationSuccessAction,
+			getWeatherByGeolocationSuccessAction
 		])
 
-		expect(api.getPositionByIp.mock.calls.length).toBe(1)
-		expect(api.getWeather.mock.calls.length).toBe(1)
+		// Check Api services called once
+		expect(api.getPositionByIp.mock.calls).toEqual([[]])
+		expect(api.getWeather.mock.calls).toEqual([[`q=${mockedGeolocation.city}`]])
 
+		// Check state update
 		expect(sagaTester.getState()).toEqual({
 			cities: [mockedOpenWeather],
 			loading: false,
@@ -409,19 +420,25 @@ describe('Test sagas', () => {
 			initialState: { cities: [], loading: true, error: null }
 		})
 
+		// Expected called actions
+		const searchCityAction = searchCity(mockedOpenWeather.name)
+		const searchCitySuccessAction = searchCitySuccess(mockedOpenWeather)
+
 		sagaTester.start(watchSearchCity)
+		sagaTester.dispatch(searchCityAction)
 
-		sagaTester.dispatch(searchCity(mockedOpenWeather.name))
+		await sagaTester.waitFor(searchCitySuccessAction.type)
 
-		await sagaTester.waitFor(searchCitySuccess().type)
-
+		// Check called actions
 		expect(sagaTester.getCalledActions()).toEqual([
-			searchCity(mockedOpenWeather.name),
-			searchCitySuccess(mockedOpenWeather)
+			searchCityAction,
+			searchCitySuccessAction
 		])
 
-		expect(api.getWeather.mock.calls.length).toBe(1)
+		// Check openWeather called whit right parameters
+		expect(api.getWeather.mock.calls).toEqual([[`q=${mockedGeolocation.city}`]])
 
+		// Check state update
 		expect(sagaTester.getState()).toEqual({
 			cities: [mockedOpenWeather],
 			loading: false,
@@ -435,6 +452,8 @@ describe('Test sagas', () => {
 			reducers,
 			initialState: { cities: [mockedOpenWeather], loading: true, error: null }
 		})
+
+		// Expected called actions
 		const updateWeatherAction = updateWeather(mockedOpenWeather.id)
 		const updateWeatherSuccessAction = updateWeatherSuccess(
 			mockedOpenWeatherUpdated
@@ -445,11 +464,16 @@ describe('Test sagas', () => {
 
 		await sagaTester.waitFor(updateWeatherSuccessAction.type)
 
-		expect(api.getWeather.mock.calls.length).toBe(1)
+		// Check actions
 		expect(sagaTester.getCalledActions()).toEqual([
 			updateWeatherAction,
 			updateWeatherSuccessAction
 		])
+
+		// Check api call
+		expect(api.getWeather.mock.calls).toEqual([[`id=${mockedOpenWeather.id}`]])
+
+		// Check state update
 		expect(sagaTester.getState()).toEqual({
 			cities: [mockedOpenWeatherUpdated],
 			loading: false,
@@ -457,15 +481,16 @@ describe('Test sagas', () => {
 		})
 	})
 
-	test('should call OpenWeather and update the forecast in the city selected', async () => {
-		api.getForecastWeather = jest.fn(() =>
-			Promise.resolve(mockedOpenWeatherForecast)
-		)
+	test('watchGetForecastWeather should call OpenWeather and update the forecast for the city', async () => {
+		api.getForecastWeather = jest.fn(() => Promise.resolve(mockedForecast))
 		const sagaTester = new SagaTester({
 			reducers,
 			initialState: { cities: [mockedOpenWeather], loading: true, error: null }
 		})
+
 		const { id, coord } = mockedOpenWeather
+
+		// Expected actions
 		const getForecastWeatherAction = getForecastWeather(
 			id,
 			coord.lat,
@@ -473,7 +498,7 @@ describe('Test sagas', () => {
 		)
 		const getForecastWeatherSuccessAction = getForecastWeatherSuccess(
 			id,
-			mockedOpenWeatherForecast
+			mockedForecast
 		)
 
 		sagaTester.start(watchGetForecastWeather)
@@ -481,15 +506,37 @@ describe('Test sagas', () => {
 
 		await sagaTester.waitFor(getForecastWeatherSuccessAction.type)
 
+		// Check api call
 		expect(api.getForecastWeather.mock.calls).toEqual([[coord.lat, coord.lon]])
+
+		// Check called actions
 		expect(sagaTester.getCalledActions()).toEqual([
 			getForecastWeatherAction,
 			getForecastWeatherSuccessAction
 		])
+
+		// Check state
 		expect(sagaTester.getState()).toEqual({
-			cities: [{ ...mockedOpenWeather, forecast: mockedOpenWeatherForecast }],
+			cities: [{ ...mockedOpenWeather, forecast: mockedForecast }],
 			loading: false,
 			error: null
 		})
+	})
+})
+
+describe('State Reducers', () => {
+	test('removeCityById should remove a city from store by id', () => {
+		const store = new SagaTester({
+			reducers,
+			initialState: {
+				cities: [{ ...mockedOpenWeather, forecast: mockedForecast }]
+			}
+		})
+
+		// dispatch action
+		store.dispatch(removeCityById(mockedOpenWeather.id))
+
+		// Check state
+		expect(store.getState().cities).toEqual([])
 	})
 })

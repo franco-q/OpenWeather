@@ -44,13 +44,16 @@ var days = [
 
 const ForecastDetails = ({ dt, temp, weather }) => {
 	const day = new Date(dt * 1000)
+
 	const icon =
 		weatherIcons.find(i => weather.some(w => i.id === w.icon)) ||
 		weatherIcons[0]
 	return (
 		<Container>
 			<TitleCol>
-				<Subheading>{days[day.getDay()]}</Subheading>
+				<Subheading>
+					{days[day.getDay()]} {day.getDate()}/{day.getMonth() + 1}
+				</Subheading>
 				<Paragraph>{weather.map(w => w.description).join(', ')}</Paragraph>
 			</TitleCol>
 			<ConditionCol>

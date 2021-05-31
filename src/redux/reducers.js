@@ -11,11 +11,14 @@ import {
 	GET_WEATHER_BY_GEOLOCATION_FAILED,
 	GET_FORECAST_WEATHER,
 	GET_FORECAST_WEATHER_SUCCESS,
-	GET_FORECAST_WEATHER_FAILED
+	GET_FORECAST_WEATHER_FAILED,
+	REMOVE_CITY_BY_ID
 } from './actions'
 
 function cities(state = [], action) {
 	switch (action.type) {
+		case REMOVE_CITY_BY_ID:
+			return state.filter(city => city.id !== action.payload.id)
 		case GET_WEATHER_BY_GEOLOCATION_SUCCESS:
 			return [action.data, ...state.filter(city => city.id !== action.data.id)]
 		case UPDATE_WEATHER_SUCCESS:
@@ -57,7 +60,6 @@ function error(state = null, action) {
 		case GET_WEATHER_BY_GEOLOCATION_FAILED:
 		case UPDATE_WEATHER_FAILED:
 		case GET_FORECAST_WEATHER_FAILED:
-			console.log(action)
 			return action.error
 		default:
 			return state
