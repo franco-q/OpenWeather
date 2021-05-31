@@ -62,10 +62,12 @@ export function* watchGetGeolocationSuccess() {
  */
 export function* getGeolocationSagaSuccessSaga(action) {
 	try {
-		const data = yield call(getWeather, `q=${action.geolocation.city}`)
+		const { city } = action.payload
+		const data = yield call(getWeather, `q=${city}`)
 		// Este dispatch guarda la data en cities reducer
 		yield put(getWeatherByGeolocationSuccess(data))
 	} catch (error) {
+		console.log(error)
 		// reducers error
 		yield put(
 			getWeatherByGeolocationFailed({
@@ -90,7 +92,8 @@ export function* watchSearchCity() {
  */
 export function* searchCitySaga(action) {
 	try {
-		const data = yield call(getWeather, `q=${action.query}`)
+		const { query } = action.payload
+		const data = yield call(getWeather, `q=${query}`)
 		// Este dispatch guarda la data en cities reducer
 		yield put(searchCitySuccess(data))
 	} catch (e) {
@@ -118,7 +121,8 @@ export function* watchUpdateWeather() {
  */
 export function* updateWeatherSaga(action) {
 	try {
-		const data = yield call(getWeather, `id=${action.id}`)
+		const { id } = action.payload
+		const data = yield call(getWeather, `id=${id}`)
 		// Este dispatch guarda la data en cities reducer
 		yield put(updateWeatherSuccess(data))
 	} catch (e) {

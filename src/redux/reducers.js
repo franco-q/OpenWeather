@@ -20,12 +20,22 @@ function cities(state = [], action) {
 		case REMOVE_CITY_BY_ID:
 			return state.filter(city => city.id !== action.payload.id)
 		case GET_WEATHER_BY_GEOLOCATION_SUCCESS:
-			return [action.data, ...state.filter(city => city.id !== action.data.id)]
+			// La ciudad actual se guarda en el indice 0
+			return [
+				action.payload,
+				...state.filter(city => city.id !== action.payload.id)
+			]
 		case UPDATE_WEATHER_SUCCESS:
 		case SEARCH_CITY_SUCCESS:
-			return [...state.filter(city => city.id !== action.data.id), action.data]
+			// si city ya existe la modifico sino hago un push al array
+			return state.some(city => city.id === action.payload.id)
+				? state.map(city =>
+						city.id === action.payload.id ? action.payload : city
+				  )
+				: [...state, action.payload]
 		case GET_FORECAST_WEATHER_SUCCESS:
 			const { id, forecast } = action.payload
+			// busco la ciudad por id y agrego/actualizo la prop forecast
 			return state.map(city => (city.id === id ? { ...city, forecast } : city))
 		default:
 			return state
@@ -33,6 +43,8 @@ function cities(state = [], action) {
 }
 
 function loading(state = true, action) {
+	//loading = true -> action que lanza alguna function async(sagas)
+	//loading = false -> action es llamada como resultado de una funcion async(sagas)
 	switch (action.type) {
 		case SEARCH_CITY:
 		case GET_GEOLOCATION:

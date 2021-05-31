@@ -6,7 +6,7 @@ export const getGeolocation = () => ({
 export const GET_GEOLOCATION_SUCCESS = 'GET_GEOLOCATION_SUCCESS'
 export const getGeolocationSuccess = geolocation => ({
 	type: GET_GEOLOCATION_SUCCESS,
-	geolocation
+	payload: geolocation
 })
 
 export const GET_GEOLOCATION_FAILED = 'GET_GEOLOCATION_FAILED'
@@ -23,7 +23,7 @@ export const GET_WEATHER_BY_GEOLOCATION_SUCCESS =
 	'GET_WEATHER_BY_GEOLOCATION_SUCCESS'
 export const getWeatherByGeolocationSuccess = data => ({
 	type: GET_WEATHER_BY_GEOLOCATION_SUCCESS,
-	data
+	payload: data
 })
 
 export const GET_WEATHER_BY_GEOLOCATION_FAILED =
@@ -36,13 +36,13 @@ export const getWeatherByGeolocationFailed = error => ({
 export const SEARCH_CITY = 'SEARCH_CITY'
 export const searchCity = query => ({
 	type: SEARCH_CITY,
-	query
+	payload: { query }
 })
 
 export const SEARCH_CITY_SUCCESS = 'SEARCH_CITY_SUCCESS'
 export const searchCitySuccess = data => ({
 	type: SEARCH_CITY_SUCCESS,
-	data
+	payload: data
 })
 
 export const SEARCH_CITY_FAILED = 'SEARCH_CITY_FAILED'
@@ -54,13 +54,13 @@ export const searchCityFailed = error => ({
 export const UPDATE_WEATHER = 'UPDATE_WEATHER'
 export const updateWeather = id => ({
 	type: UPDATE_WEATHER,
-	id
+	payload: { id }
 })
 
 export const UPDATE_WEATHER_SUCCESS = 'UPDATE_WEATHER_SUCCESS'
 export const updateWeatherSuccess = data => ({
 	type: UPDATE_WEATHER_SUCCESS,
-	data
+	payload: data
 })
 
 export const UPDATE_WEATHER_FAILED = 'UPDATE_WEATHER_FAILED'
