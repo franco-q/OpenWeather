@@ -12,7 +12,7 @@ const persistedReducers = persistReducer(
 	{
 		key: 'root',
 		storage: AsyncStorage,
-		blacklist: ['error']
+		blacklist: ['error', 'redirect']
 	},
 	reducers
 )

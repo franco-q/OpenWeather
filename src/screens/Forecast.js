@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { FlatList } from 'react-native'
 import { connect } from 'react-redux'
 import styled from 'styled-components/native'
 import { Colors, Headline } from 'react-native-paper'
 import ForecastDetails from '../components/ForecastDetails'
-import { getForecastWeather } from '../redux/actions'
 import Loading from '../components/Loading'
 
 const Container = styled.View`
@@ -17,38 +16,25 @@ const Title = styled(Headline)`
 
 const mapStateToProps = (state, props) => ({
 	loading: state.loading,
-	forecast: state.cities.reduce(
-		(prev, curr) =>
-			curr.id === props.route.params.city.id ? curr.forecast : prev,
-		{}
-	)
+	city: state.cities.find(city => city.id === props.route.params.id) // params from GET_FORECAST_WEATHER_SUCCESS
 })
 
-const mapDispatchToProps = dispatch => ({
-	getForecast: city => {
-		const { id, coord } = city
-		dispatch(getForecastWeather(id, coord.lat, coord.lon))
-	}
-})
-
-const Forecast = ({ route, getForecast, loading, forecast }) => {
-	useEffect(() => {
-		getForecast(route.params.city)
-	}, [getForecast, route.params.city])
-
+const Forecast = ({ loading, city }) => {
 	return (
 		<Container>
 			{loading ? (
 				<Loading />
 			) : (
-				forecast && (
+				city && (
 					<>
-						<Title>{route.params.city.name}</Title>
-						<FlatList
-							data={forecast.daily.slice(1, 6)}
-							keyExtractor={item => item.dt}
-							renderItem={({ item }) => <ForecastDetails {...item} />}
-						/>
+						<Title>{city.name}</Title>
+						{city.forecast && (
+							<FlatList
+								data={city.forecast.daily.slice(1, 6)}
+								keyExtractor={item => item.dt}
+								renderItem={({ item }) => <ForecastDetails {...item} />}
+							/>
+						)}
 					</>
 				)
 			)}
@@ -56,4 +42,4 @@ const Forecast = ({ route, getForecast, loading, forecast }) => {
 	)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Forecast)
+export default connect(mapStateToProps)(Forecast)

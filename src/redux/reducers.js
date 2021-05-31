@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 import { combineReducers } from 'redux'
 import {
 	GET_GEOLOCATION,
@@ -51,6 +52,7 @@ function loading(state = true, action) {
 		case UPDATE_WEATHER:
 		case GET_FORECAST_WEATHER:
 			return true
+		case REMOVE_CITY_BY_ID:
 		case SEARCH_CITY_SUCCESS:
 		case SEARCH_CITY_FAILED:
 		case GET_WEATHER_BY_GEOLOCATION_SUCCESS:
@@ -78,4 +80,20 @@ function error(state = null, action) {
 	}
 }
 
-export default combineReducers({ cities, loading, error })
+/**
+ * Usado para redirigir hacia alguna pantalla
+ * despues de cierto action.
+ * @returns {screen: String, params: any} { screen: Pantalla a redireccionar, params: parametros a pasar }.
+ * ie ({ screen: 'Forecast', params: { id : 3430863 } })
+ */
+function redirect(state = null, action) {
+	switch (action.type) {
+		case GET_FORECAST_WEATHER_SUCCESS:
+			const { id } = action.payload
+			return { screen: 'Forecast', params: { id } }
+		default:
+			return state
+	}
+}
+
+export default combineReducers({ cities, loading, error, redirect })
