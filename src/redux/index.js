@@ -11,7 +11,8 @@ import Sagas from './sagas'
 const persistedReducers = persistReducer(
 	{
 		key: 'root',
-		storage: AsyncStorage
+		storage: AsyncStorage,
+		blacklist: ['error']
 	},
 	reducers
 )
