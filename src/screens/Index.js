@@ -86,7 +86,7 @@ const Index = ({
 	return (
 		<Container>
 			{loading && <Loading />}
-			{showSearchBox && <SearchBox onSearch={search} />}
+			{showSearchBox && <SearchBox onSearch={search} cities={cities} />}
 			<FlatList
 				data={cities}
 				keyExtractor={item => item.id}

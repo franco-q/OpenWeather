@@ -21,7 +21,7 @@ const InputWrap = styled.View`
 	padding-right: 4px;
 `
 
-export default ({ onSearch }) => {
+export default ({ onSearch, cities }) => {
 	const [val, setVal] = useState('')
 
 	const searchAndClear = () => {
@@ -34,10 +34,14 @@ export default ({ onSearch }) => {
 
 	return (
 		<Container>
-			<Caption>Buscar ciudad</Caption>
+			<Caption>Buscar ciudad {(cities || []).length}/5</Caption>
 			<Row>
 				<InputWrap>
-					<Input onChangeText={setVal} value={val} />
+					<Input
+						editable={(cities || []).length < 5}
+						onChangeText={setVal}
+						value={val}
+					/>
 				</InputWrap>
 				<View>
 					<Button
