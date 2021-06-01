@@ -32,8 +32,8 @@
     │   │   └── sagas.js        # Sagas Watchers 
     │   ├── screens
     │   │   └── ...
-    │   ├── api.js
-    │   └── ...
+    │   ├── api.js              # Api services
+    │   └── constans.js
     ├── App.js
     └── ...
 
