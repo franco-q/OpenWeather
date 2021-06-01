@@ -16,22 +16,24 @@
 
 
 ### Estructura
-.
-├── __test__
-│   ├── __snapshots__
-│   ├── App-test.js         # Screen tests
-│   └── Store-test.js       # Store/sagas tests
-├── src
-│   ├── components
-│   │   └── ...
-│   ├── redux
-│   │   ├── actions.js      # Action creators
-│   │   ├── index.js        # Provider/Store
-│   │   ├── reducers.js     # combineReducers
-│   │   └── sagas.js        # Sagas Watchers 
-│   ├── screens
-│   │   └── ...
-│   ├── api.js
-│   └── ...
-├── App.js
-└── ...
+    .
+    ├── ...
+    ├── __test__
+    │   ├── __snapshots__
+    │   ├── App-test.js         # Screen tests
+    │   └── Store-test.js       # Store/sagas tests
+    ├── src
+    │   ├── components
+    │   │   └── ...
+    │   ├── redux
+    │   │   ├── actions.js      # Action creators
+    │   │   ├── index.js        # Provider/Store
+    │   │   ├── reducers.js     # combineReducers
+    │   │   └── sagas.js        # Sagas Watchers 
+    │   ├── screens
+    │   │   └── ...
+    │   ├── api.js
+    │   └── ...
+    ├── App.js
+    └── ...
+
