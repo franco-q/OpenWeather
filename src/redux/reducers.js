@@ -13,7 +13,8 @@ import {
 	GET_FORECAST_WEATHER,
 	GET_FORECAST_WEATHER_SUCCESS,
 	GET_FORECAST_WEATHER_FAILED,
-	REMOVE_CITY_BY_ID
+	REMOVE_CITY_BY_ID,
+	REMOVE_SNACKBAR
 } from './actions'
 
 function cities(state = [], action) {
@@ -96,4 +97,23 @@ function redirect(state = null, action) {
 	}
 }
 
-export default combineReducers({ cities, loading, error, redirect })
+/**
+ * Usado para mostrar el componente SnackBar en App.js
+ * @returns {message: any, onDismiss: Func} { message: Mensaje a mostrar, onDismiss: funcion a ejecutar en el evento onDismiss }.
+ * ie ({ message: 'Success.', onDismiss: () => console.log('Success.') })
+ */
+function snackbar(state, action) {
+	switch (action.type) {
+		case SEARCH_CITY_SUCCESS:
+			return { message: 'Ciudad guardada.' }
+		case REMOVE_CITY_BY_ID:
+			return { message: 'Ciudad eliminada.' }
+		case UPDATE_WEATHER_SUCCESS:
+			return { message: 'Clima actualizado.' }
+		case REMOVE_SNACKBAR:
+		default:
+			return null
+	}
+}
+
+export default combineReducers({ cities, loading, error, redirect, snackbar })

@@ -384,6 +384,44 @@ exports[`Render Snapshoots Index screen behavior 2`] = `
                     "textAlign": "left",
                   },
                   Object {
+                    "color": "rgba(0, 0, 0, 0.54)",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                    "writingDirection": "ltr",
+                  },
+                  Array [
+                    Object {
+                      "fontSize": 12,
+                      "letterSpacing": 0.4,
+                      "lineHeight": 20,
+                      "marginVertical": 2,
+                    },
+                    undefined,
+                  ],
+                ],
+              ]
+            }
+          >
+            5/29/2021
+             
+            12:16:28
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                Object {
+                  "textAlign": "left",
+                },
+                Array [
+                  Object {
+                    "textAlign": "left",
+                  },
+                  Object {
                     "color": "rgba(0, 0, 0, 0.87)",
                     "fontFamily": "System",
                     "fontWeight": "500",
@@ -528,7 +566,7 @@ exports[`Render Snapshoots Index screen behavior 2`] = `
                   Object {
                     "alignItems": "center",
                     "flexBasis": 0,
-                    "flexGrow": 6,
+                    "flexGrow": 1,
                     "flexShrink": 1,
                   },
                 ]
@@ -569,8 +607,7 @@ exports[`Render Snapshoots Index screen behavior 2`] = `
                   ]
                 }
               >
-                5.35
-                °
+                5.35°
               </Text>
             </View>
             <View
@@ -579,7 +616,7 @@ exports[`Render Snapshoots Index screen behavior 2`] = `
                   Object {
                     "alignItems": "center",
                     "flexBasis": 0,
-                    "flexGrow": 6,
+                    "flexGrow": 1,
                     "flexShrink": 1,
                   },
                 ]
@@ -620,8 +657,7 @@ exports[`Render Snapshoots Index screen behavior 2`] = `
                   ]
                 }
               >
-                7.78
-                °
+                7.78°
               </Text>
             </View>
             <View
@@ -630,7 +666,7 @@ exports[`Render Snapshoots Index screen behavior 2`] = `
                   Object {
                     "alignItems": "center",
                     "flexBasis": 0,
-                    "flexGrow": 6,
+                    "flexGrow": 1,
                     "flexShrink": 1,
                   },
                 ]
@@ -671,8 +707,7 @@ exports[`Render Snapshoots Index screen behavior 2`] = `
                   ]
                 }
               >
-                8.46
-                °
+                8.46°
               </Text>
             </View>
             <View
@@ -681,58 +716,7 @@ exports[`Render Snapshoots Index screen behavior 2`] = `
                   Object {
                     "alignItems": "center",
                     "flexBasis": 0,
-                    "flexGrow": 6,
-                    "flexShrink": 1,
-                  },
-                ]
-              }
-            >
-              <Text
-                allowFontScaling={false}
-                style={
-                  Array [
-                    Object {
-                      "color": "#757575",
-                      "fontSize": 24,
-                    },
-                    undefined,
-                    Object {
-                      "fontFamily": "Material Design Icons",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    },
-                    Object {},
-                  ]
-                }
-              >
-                󰖎
-              </Text>
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    Object {
-                      "textAlign": "left",
-                    },
-                    undefined,
-                  ]
-                }
-              >
-                51
-                %
-              </Text>
-            </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "flexBasis": 0,
-                    "flexGrow": 6,
+                    "flexGrow": 1,
                     "flexShrink": 1,
                   },
                 ]
@@ -773,8 +757,7 @@ exports[`Render Snapshoots Index screen behavior 2`] = `
                   ]
                 }
               >
-                1009
-                hPa
+                1009hPa
               </Text>
             </View>
             <View
@@ -783,7 +766,57 @@ exports[`Render Snapshoots Index screen behavior 2`] = `
                   Object {
                     "alignItems": "center",
                     "flexBasis": 0,
-                    "flexGrow": 6,
+                    "flexGrow": 1,
+                    "flexShrink": 1,
+                  },
+                ]
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                style={
+                  Array [
+                    Object {
+                      "color": "#757575",
+                      "fontSize": 24,
+                    },
+                    undefined,
+                    Object {
+                      "fontFamily": "Material Design Icons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                󰖎
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    Object {
+                      "textAlign": "left",
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                51%
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexBasis": 0,
+                    "flexGrow": 1,
                     "flexShrink": 1,
                   },
                 ]
@@ -824,8 +857,7 @@ exports[`Render Snapshoots Index screen behavior 2`] = `
                   ]
                 }
               >
-                4.92
-                km
+                4.92km
               </Text>
             </View>
           </View>
@@ -834,306 +866,118 @@ exports[`Render Snapshoots Index screen behavior 2`] = `
               Array [
                 Object {
                   "flexDirection": "row",
-                  "justifyContent": "space-around",
-                  "paddingBottom": 8,
-                  "paddingLeft": 8,
-                  "paddingRight": 8,
-                  "paddingTop": 8,
+                  "justifyContent": "space-between",
+                  "marginTop": 12,
+                  "paddingBottom": 4,
+                  "paddingLeft": 4,
+                  "paddingRight": 4,
+                  "paddingTop": 4,
                   "width": "100%",
                 },
               ]
             }
           >
             <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "backgroundColor": "transparent",
-                  "borderColor": "transparent",
-                  "borderRadius": 4,
-                  "borderStyle": "solid",
-                  "borderWidth": 0,
-                  "elevation": 0,
-                  "minWidth": "auto",
+                  "opacity": 1,
+                  "paddingBottom": 4,
+                  "paddingLeft": 4,
+                  "paddingRight": 4,
+                  "paddingTop": 4,
                 }
               }
             >
-              <View
-                accessibilityRole="button"
-                accessibilityState={
-                  Object {
-                    "disabled": undefined,
-                  }
-                }
-                accessible={true}
-                focusable={true}
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <Text
                 style={
                   Array [
                     Object {
-                      "overflow": "hidden",
-                    },
-                    Object {
-                      "borderRadius": 4,
+                      "color": "#616161",
+                      "fontSize": 14,
+                      "textAlign": "center",
                     },
                   ]
                 }
               >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "alignItems": "center",
-                        "flexDirection": "row",
-                        "justifyContent": "center",
-                      },
-                      undefined,
-                    ]
-                  }
-                >
-                  <Text
-                    numberOfLines={1}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#000000",
-                          "fontFamily": "System",
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "textAlign": "left",
-                        },
-                        Array [
-                          Object {
-                            "letterSpacing": 1,
-                            "marginHorizontal": 16,
-                            "marginVertical": 9,
-                            "textAlign": "center",
-                          },
-                          Object {
-                            "marginHorizontal": 8,
-                          },
-                          Object {
-                            "textTransform": "uppercase",
-                          },
-                          Object {
-                            "color": "#212121",
-                            "fontFamily": "System",
-                            "fontWeight": "500",
-                          },
-                          Object {
-                            "fontFamily": "System",
-                            "fontWeight": "500",
-                          },
-                          undefined,
-                        ],
-                      ]
-                    }
-                  >
-                    Ver pronostico
-                  </Text>
-                </View>
-              </View>
+                VER PRONOSTICO
+              </Text>
             </View>
             <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "backgroundColor": "transparent",
-                  "borderColor": "transparent",
-                  "borderRadius": 4,
-                  "borderStyle": "solid",
-                  "borderWidth": 0,
-                  "elevation": 0,
-                  "minWidth": "auto",
+                  "opacity": 1,
+                  "paddingBottom": 4,
+                  "paddingLeft": 4,
+                  "paddingRight": 4,
+                  "paddingTop": 4,
                 }
               }
             >
-              <View
-                accessibilityRole="button"
-                accessibilityState={
-                  Object {
-                    "disabled": undefined,
-                  }
-                }
-                accessible={true}
-                focusable={true}
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <Text
                 style={
                   Array [
                     Object {
-                      "overflow": "hidden",
-                    },
-                    Object {
-                      "borderRadius": 4,
+                      "color": "#616161",
+                      "fontSize": 14,
+                      "textAlign": "center",
                     },
                   ]
                 }
               >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "alignItems": "center",
-                        "flexDirection": "row",
-                        "justifyContent": "center",
-                      },
-                      undefined,
-                    ]
-                  }
-                >
-                  <Text
-                    numberOfLines={1}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#000000",
-                          "fontFamily": "System",
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "textAlign": "left",
-                        },
-                        Array [
-                          Object {
-                            "letterSpacing": 1,
-                            "marginHorizontal": 16,
-                            "marginVertical": 9,
-                            "textAlign": "center",
-                          },
-                          Object {
-                            "marginHorizontal": 8,
-                          },
-                          Object {
-                            "textTransform": "uppercase",
-                          },
-                          Object {
-                            "color": "#212121",
-                            "fontFamily": "System",
-                            "fontWeight": "500",
-                          },
-                          Object {
-                            "fontFamily": "System",
-                            "fontWeight": "500",
-                          },
-                          undefined,
-                        ],
-                      ]
-                    }
-                  >
-                    Actualizar
-                  </Text>
-                </View>
-              </View>
+                ACTUALIZAR
+              </Text>
             </View>
             <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "backgroundColor": "transparent",
-                  "borderColor": "transparent",
-                  "borderRadius": 4,
-                  "borderStyle": "solid",
-                  "borderWidth": 0,
-                  "elevation": 0,
-                  "minWidth": "auto",
+                  "opacity": 1,
+                  "paddingBottom": 4,
+                  "paddingLeft": 4,
+                  "paddingRight": 4,
+                  "paddingTop": 4,
                 }
               }
             >
-              <View
-                accessibilityRole="button"
-                accessibilityState={
-                  Object {
-                    "disabled": undefined,
-                  }
-                }
-                accessible={true}
-                focusable={true}
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <Text
                 style={
                   Array [
                     Object {
-                      "overflow": "hidden",
-                    },
-                    Object {
-                      "borderRadius": 4,
+                      "color": "#616161",
+                      "fontSize": 14,
+                      "textAlign": "center",
                     },
                   ]
                 }
               >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "alignItems": "center",
-                        "flexDirection": "row",
-                        "justifyContent": "center",
-                      },
-                      undefined,
-                    ]
-                  }
-                >
-                  <Text
-                    numberOfLines={1}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#000000",
-                          "fontFamily": "System",
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "textAlign": "left",
-                        },
-                        Array [
-                          Object {
-                            "letterSpacing": 1,
-                            "marginHorizontal": 16,
-                            "marginVertical": 9,
-                            "textAlign": "center",
-                          },
-                          Object {
-                            "marginHorizontal": 8,
-                          },
-                          Object {
-                            "textTransform": "uppercase",
-                          },
-                          Object {
-                            "color": "#212121",
-                            "fontFamily": "System",
-                            "fontWeight": "500",
-                          },
-                          Object {
-                            "fontFamily": "System",
-                            "fontWeight": "500",
-                          },
-                          undefined,
-                        ],
-                      ]
-                    }
-                  >
-                    Borrar
-                  </Text>
-                </View>
-              </View>
+                BORRAR
+              </Text>
             </View>
           </View>
         </View>
@@ -1260,6 +1104,44 @@ exports[`Render Snapshoots Index screen behavior 3`] = `
             ]
           }
         >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                Object {
+                  "textAlign": "left",
+                },
+                Array [
+                  Object {
+                    "textAlign": "left",
+                  },
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.54)",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                    "writingDirection": "ltr",
+                  },
+                  Array [
+                    Object {
+                      "fontSize": 12,
+                      "letterSpacing": 0.4,
+                      "lineHeight": 20,
+                      "marginVertical": 2,
+                    },
+                    undefined,
+                  ],
+                ],
+              ]
+            }
+          >
+            5/29/2021
+             
+            13:15:41
+          </Text>
           <Text
             style={
               Array [
@@ -1420,7 +1302,7 @@ exports[`Render Snapshoots Index screen behavior 3`] = `
                   Object {
                     "alignItems": "center",
                     "flexBasis": 0,
-                    "flexGrow": 6,
+                    "flexGrow": 1,
                     "flexShrink": 1,
                   },
                 ]
@@ -1461,8 +1343,7 @@ exports[`Render Snapshoots Index screen behavior 3`] = `
                   ]
                 }
               >
-                5.54
-                °
+                5.54°
               </Text>
             </View>
             <View
@@ -1471,7 +1352,7 @@ exports[`Render Snapshoots Index screen behavior 3`] = `
                   Object {
                     "alignItems": "center",
                     "flexBasis": 0,
-                    "flexGrow": 6,
+                    "flexGrow": 1,
                     "flexShrink": 1,
                   },
                 ]
@@ -1512,8 +1393,7 @@ exports[`Render Snapshoots Index screen behavior 3`] = `
                   ]
                 }
               >
-                8.01
-                °
+                8.01°
               </Text>
             </View>
             <View
@@ -1522,7 +1402,7 @@ exports[`Render Snapshoots Index screen behavior 3`] = `
                   Object {
                     "alignItems": "center",
                     "flexBasis": 0,
-                    "flexGrow": 6,
+                    "flexGrow": 1,
                     "flexShrink": 1,
                   },
                 ]
@@ -1563,8 +1443,7 @@ exports[`Render Snapshoots Index screen behavior 3`] = `
                   ]
                 }
               >
-                9.57
-                °
+                9.57°
               </Text>
             </View>
             <View
@@ -1573,58 +1452,7 @@ exports[`Render Snapshoots Index screen behavior 3`] = `
                   Object {
                     "alignItems": "center",
                     "flexBasis": 0,
-                    "flexGrow": 6,
-                    "flexShrink": 1,
-                  },
-                ]
-              }
-            >
-              <Text
-                allowFontScaling={false}
-                style={
-                  Array [
-                    Object {
-                      "color": "#757575",
-                      "fontSize": 24,
-                    },
-                    undefined,
-                    Object {
-                      "fontFamily": "Material Design Icons",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    },
-                    Object {},
-                  ]
-                }
-              >
-                󰖎
-              </Text>
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    Object {
-                      "textAlign": "left",
-                    },
-                    undefined,
-                  ]
-                }
-              >
-                53
-                %
-              </Text>
-            </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "flexBasis": 0,
-                    "flexGrow": 6,
+                    "flexGrow": 1,
                     "flexShrink": 1,
                   },
                 ]
@@ -1665,8 +1493,7 @@ exports[`Render Snapshoots Index screen behavior 3`] = `
                   ]
                 }
               >
-                1009
-                hPa
+                1009hPa
               </Text>
             </View>
             <View
@@ -1675,7 +1502,57 @@ exports[`Render Snapshoots Index screen behavior 3`] = `
                   Object {
                     "alignItems": "center",
                     "flexBasis": 0,
-                    "flexGrow": 6,
+                    "flexGrow": 1,
+                    "flexShrink": 1,
+                  },
+                ]
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                style={
+                  Array [
+                    Object {
+                      "color": "#757575",
+                      "fontSize": 24,
+                    },
+                    undefined,
+                    Object {
+                      "fontFamily": "Material Design Icons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                󰖎
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    Object {
+                      "textAlign": "left",
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                53%
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexBasis": 0,
+                    "flexGrow": 1,
                     "flexShrink": 1,
                   },
                 ]
@@ -1716,8 +1593,7 @@ exports[`Render Snapshoots Index screen behavior 3`] = `
                   ]
                 }
               >
-                5.81
-                km
+                5.81km
               </Text>
             </View>
           </View>
@@ -1726,306 +1602,118 @@ exports[`Render Snapshoots Index screen behavior 3`] = `
               Array [
                 Object {
                   "flexDirection": "row",
-                  "justifyContent": "space-around",
-                  "paddingBottom": 8,
-                  "paddingLeft": 8,
-                  "paddingRight": 8,
-                  "paddingTop": 8,
+                  "justifyContent": "space-between",
+                  "marginTop": 12,
+                  "paddingBottom": 4,
+                  "paddingLeft": 4,
+                  "paddingRight": 4,
+                  "paddingTop": 4,
                   "width": "100%",
                 },
               ]
             }
           >
             <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "backgroundColor": "transparent",
-                  "borderColor": "transparent",
-                  "borderRadius": 4,
-                  "borderStyle": "solid",
-                  "borderWidth": 0,
-                  "elevation": 0,
-                  "minWidth": "auto",
+                  "opacity": 1,
+                  "paddingBottom": 4,
+                  "paddingLeft": 4,
+                  "paddingRight": 4,
+                  "paddingTop": 4,
                 }
               }
             >
-              <View
-                accessibilityRole="button"
-                accessibilityState={
-                  Object {
-                    "disabled": undefined,
-                  }
-                }
-                accessible={true}
-                focusable={true}
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <Text
                 style={
                   Array [
                     Object {
-                      "overflow": "hidden",
-                    },
-                    Object {
-                      "borderRadius": 4,
+                      "color": "#616161",
+                      "fontSize": 14,
+                      "textAlign": "center",
                     },
                   ]
                 }
               >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "alignItems": "center",
-                        "flexDirection": "row",
-                        "justifyContent": "center",
-                      },
-                      undefined,
-                    ]
-                  }
-                >
-                  <Text
-                    numberOfLines={1}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#000000",
-                          "fontFamily": "System",
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "textAlign": "left",
-                        },
-                        Array [
-                          Object {
-                            "letterSpacing": 1,
-                            "marginHorizontal": 16,
-                            "marginVertical": 9,
-                            "textAlign": "center",
-                          },
-                          Object {
-                            "marginHorizontal": 8,
-                          },
-                          Object {
-                            "textTransform": "uppercase",
-                          },
-                          Object {
-                            "color": "#212121",
-                            "fontFamily": "System",
-                            "fontWeight": "500",
-                          },
-                          Object {
-                            "fontFamily": "System",
-                            "fontWeight": "500",
-                          },
-                          undefined,
-                        ],
-                      ]
-                    }
-                  >
-                    Ver pronostico
-                  </Text>
-                </View>
-              </View>
+                VER PRONOSTICO
+              </Text>
             </View>
             <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "backgroundColor": "transparent",
-                  "borderColor": "transparent",
-                  "borderRadius": 4,
-                  "borderStyle": "solid",
-                  "borderWidth": 0,
-                  "elevation": 0,
-                  "minWidth": "auto",
+                  "opacity": 1,
+                  "paddingBottom": 4,
+                  "paddingLeft": 4,
+                  "paddingRight": 4,
+                  "paddingTop": 4,
                 }
               }
             >
-              <View
-                accessibilityRole="button"
-                accessibilityState={
-                  Object {
-                    "disabled": undefined,
-                  }
-                }
-                accessible={true}
-                focusable={true}
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <Text
                 style={
                   Array [
                     Object {
-                      "overflow": "hidden",
-                    },
-                    Object {
-                      "borderRadius": 4,
+                      "color": "#616161",
+                      "fontSize": 14,
+                      "textAlign": "center",
                     },
                   ]
                 }
               >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "alignItems": "center",
-                        "flexDirection": "row",
-                        "justifyContent": "center",
-                      },
-                      undefined,
-                    ]
-                  }
-                >
-                  <Text
-                    numberOfLines={1}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#000000",
-                          "fontFamily": "System",
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "textAlign": "left",
-                        },
-                        Array [
-                          Object {
-                            "letterSpacing": 1,
-                            "marginHorizontal": 16,
-                            "marginVertical": 9,
-                            "textAlign": "center",
-                          },
-                          Object {
-                            "marginHorizontal": 8,
-                          },
-                          Object {
-                            "textTransform": "uppercase",
-                          },
-                          Object {
-                            "color": "#212121",
-                            "fontFamily": "System",
-                            "fontWeight": "500",
-                          },
-                          Object {
-                            "fontFamily": "System",
-                            "fontWeight": "500",
-                          },
-                          undefined,
-                        ],
-                      ]
-                    }
-                  >
-                    Actualizar
-                  </Text>
-                </View>
-              </View>
+                ACTUALIZAR
+              </Text>
             </View>
             <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "backgroundColor": "transparent",
-                  "borderColor": "transparent",
-                  "borderRadius": 4,
-                  "borderStyle": "solid",
-                  "borderWidth": 0,
-                  "elevation": 0,
-                  "minWidth": "auto",
+                  "opacity": 1,
+                  "paddingBottom": 4,
+                  "paddingLeft": 4,
+                  "paddingRight": 4,
+                  "paddingTop": 4,
                 }
               }
             >
-              <View
-                accessibilityRole="button"
-                accessibilityState={
-                  Object {
-                    "disabled": undefined,
-                  }
-                }
-                accessible={true}
-                focusable={true}
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <Text
                 style={
                   Array [
                     Object {
-                      "overflow": "hidden",
-                    },
-                    Object {
-                      "borderRadius": 4,
+                      "color": "#616161",
+                      "fontSize": 14,
+                      "textAlign": "center",
                     },
                   ]
                 }
               >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "alignItems": "center",
-                        "flexDirection": "row",
-                        "justifyContent": "center",
-                      },
-                      undefined,
-                    ]
-                  }
-                >
-                  <Text
-                    numberOfLines={1}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#000000",
-                          "fontFamily": "System",
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "textAlign": "left",
-                        },
-                        Array [
-                          Object {
-                            "letterSpacing": 1,
-                            "marginHorizontal": 16,
-                            "marginVertical": 9,
-                            "textAlign": "center",
-                          },
-                          Object {
-                            "marginHorizontal": 8,
-                          },
-                          Object {
-                            "textTransform": "uppercase",
-                          },
-                          Object {
-                            "color": "#212121",
-                            "fontFamily": "System",
-                            "fontWeight": "500",
-                          },
-                          Object {
-                            "fontFamily": "System",
-                            "fontWeight": "500",
-                          },
-                          undefined,
-                        ],
-                      ]
-                    }
-                  >
-                    Borrar
-                  </Text>
-                </View>
-              </View>
+                BORRAR
+              </Text>
             </View>
           </View>
         </View>
@@ -2214,6 +1902,44 @@ exports[`Render Snapshoots Index screen behavior 5`] = `
                     "textAlign": "left",
                   },
                   Object {
+                    "color": "rgba(0, 0, 0, 0.54)",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                    "writingDirection": "ltr",
+                  },
+                  Array [
+                    Object {
+                      "fontSize": 12,
+                      "letterSpacing": 0.4,
+                      "lineHeight": 20,
+                      "marginVertical": 2,
+                    },
+                    undefined,
+                  ],
+                ],
+              ]
+            }
+          >
+            5/29/2021
+             
+            12:16:28
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                },
+                Object {
+                  "textAlign": "left",
+                },
+                Array [
+                  Object {
+                    "textAlign": "left",
+                  },
+                  Object {
                     "color": "rgba(0, 0, 0, 0.87)",
                     "fontFamily": "System",
                     "fontWeight": "500",
@@ -2358,7 +2084,7 @@ exports[`Render Snapshoots Index screen behavior 5`] = `
                   Object {
                     "alignItems": "center",
                     "flexBasis": 0,
-                    "flexGrow": 6,
+                    "flexGrow": 1,
                     "flexShrink": 1,
                   },
                 ]
@@ -2399,8 +2125,7 @@ exports[`Render Snapshoots Index screen behavior 5`] = `
                   ]
                 }
               >
-                5.35
-                °
+                5.35°
               </Text>
             </View>
             <View
@@ -2409,7 +2134,7 @@ exports[`Render Snapshoots Index screen behavior 5`] = `
                   Object {
                     "alignItems": "center",
                     "flexBasis": 0,
-                    "flexGrow": 6,
+                    "flexGrow": 1,
                     "flexShrink": 1,
                   },
                 ]
@@ -2450,8 +2175,7 @@ exports[`Render Snapshoots Index screen behavior 5`] = `
                   ]
                 }
               >
-                7.78
-                °
+                7.78°
               </Text>
             </View>
             <View
@@ -2460,7 +2184,7 @@ exports[`Render Snapshoots Index screen behavior 5`] = `
                   Object {
                     "alignItems": "center",
                     "flexBasis": 0,
-                    "flexGrow": 6,
+                    "flexGrow": 1,
                     "flexShrink": 1,
                   },
                 ]
@@ -2501,8 +2225,7 @@ exports[`Render Snapshoots Index screen behavior 5`] = `
                   ]
                 }
               >
-                8.46
-                °
+                8.46°
               </Text>
             </View>
             <View
@@ -2511,58 +2234,7 @@ exports[`Render Snapshoots Index screen behavior 5`] = `
                   Object {
                     "alignItems": "center",
                     "flexBasis": 0,
-                    "flexGrow": 6,
-                    "flexShrink": 1,
-                  },
-                ]
-              }
-            >
-              <Text
-                allowFontScaling={false}
-                style={
-                  Array [
-                    Object {
-                      "color": "#757575",
-                      "fontSize": 24,
-                    },
-                    undefined,
-                    Object {
-                      "fontFamily": "Material Design Icons",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    },
-                    Object {},
-                  ]
-                }
-              >
-                󰖎
-              </Text>
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                    },
-                    Object {
-                      "textAlign": "left",
-                    },
-                    undefined,
-                  ]
-                }
-              >
-                51
-                %
-              </Text>
-            </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "flexBasis": 0,
-                    "flexGrow": 6,
+                    "flexGrow": 1,
                     "flexShrink": 1,
                   },
                 ]
@@ -2603,8 +2275,7 @@ exports[`Render Snapshoots Index screen behavior 5`] = `
                   ]
                 }
               >
-                1009
-                hPa
+                1009hPa
               </Text>
             </View>
             <View
@@ -2613,7 +2284,57 @@ exports[`Render Snapshoots Index screen behavior 5`] = `
                   Object {
                     "alignItems": "center",
                     "flexBasis": 0,
-                    "flexGrow": 6,
+                    "flexGrow": 1,
+                    "flexShrink": 1,
+                  },
+                ]
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                style={
+                  Array [
+                    Object {
+                      "color": "#757575",
+                      "fontSize": 24,
+                    },
+                    undefined,
+                    Object {
+                      "fontFamily": "Material Design Icons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                󰖎
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                    },
+                    Object {
+                      "textAlign": "left",
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                51%
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexBasis": 0,
+                    "flexGrow": 1,
                     "flexShrink": 1,
                   },
                 ]
@@ -2654,8 +2375,7 @@ exports[`Render Snapshoots Index screen behavior 5`] = `
                   ]
                 }
               >
-                4.92
-                km
+                4.92km
               </Text>
             </View>
           </View>
@@ -2664,306 +2384,118 @@ exports[`Render Snapshoots Index screen behavior 5`] = `
               Array [
                 Object {
                   "flexDirection": "row",
-                  "justifyContent": "space-around",
-                  "paddingBottom": 8,
-                  "paddingLeft": 8,
-                  "paddingRight": 8,
-                  "paddingTop": 8,
+                  "justifyContent": "space-between",
+                  "marginTop": 12,
+                  "paddingBottom": 4,
+                  "paddingLeft": 4,
+                  "paddingRight": 4,
+                  "paddingTop": 4,
                   "width": "100%",
                 },
               ]
             }
           >
             <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "backgroundColor": "transparent",
-                  "borderColor": "transparent",
-                  "borderRadius": 4,
-                  "borderStyle": "solid",
-                  "borderWidth": 0,
-                  "elevation": 0,
-                  "minWidth": "auto",
+                  "opacity": 1,
+                  "paddingBottom": 4,
+                  "paddingLeft": 4,
+                  "paddingRight": 4,
+                  "paddingTop": 4,
                 }
               }
             >
-              <View
-                accessibilityRole="button"
-                accessibilityState={
-                  Object {
-                    "disabled": undefined,
-                  }
-                }
-                accessible={true}
-                focusable={true}
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <Text
                 style={
                   Array [
                     Object {
-                      "overflow": "hidden",
-                    },
-                    Object {
-                      "borderRadius": 4,
+                      "color": "#616161",
+                      "fontSize": 14,
+                      "textAlign": "center",
                     },
                   ]
                 }
               >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "alignItems": "center",
-                        "flexDirection": "row",
-                        "justifyContent": "center",
-                      },
-                      undefined,
-                    ]
-                  }
-                >
-                  <Text
-                    numberOfLines={1}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#000000",
-                          "fontFamily": "System",
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "textAlign": "left",
-                        },
-                        Array [
-                          Object {
-                            "letterSpacing": 1,
-                            "marginHorizontal": 16,
-                            "marginVertical": 9,
-                            "textAlign": "center",
-                          },
-                          Object {
-                            "marginHorizontal": 8,
-                          },
-                          Object {
-                            "textTransform": "uppercase",
-                          },
-                          Object {
-                            "color": "#212121",
-                            "fontFamily": "System",
-                            "fontWeight": "500",
-                          },
-                          Object {
-                            "fontFamily": "System",
-                            "fontWeight": "500",
-                          },
-                          undefined,
-                        ],
-                      ]
-                    }
-                  >
-                    Ver pronostico
-                  </Text>
-                </View>
-              </View>
+                VER PRONOSTICO
+              </Text>
             </View>
             <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "backgroundColor": "transparent",
-                  "borderColor": "transparent",
-                  "borderRadius": 4,
-                  "borderStyle": "solid",
-                  "borderWidth": 0,
-                  "elevation": 0,
-                  "minWidth": "auto",
+                  "opacity": 1,
+                  "paddingBottom": 4,
+                  "paddingLeft": 4,
+                  "paddingRight": 4,
+                  "paddingTop": 4,
                 }
               }
             >
-              <View
-                accessibilityRole="button"
-                accessibilityState={
-                  Object {
-                    "disabled": undefined,
-                  }
-                }
-                accessible={true}
-                focusable={true}
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <Text
                 style={
                   Array [
                     Object {
-                      "overflow": "hidden",
-                    },
-                    Object {
-                      "borderRadius": 4,
+                      "color": "#616161",
+                      "fontSize": 14,
+                      "textAlign": "center",
                     },
                   ]
                 }
               >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "alignItems": "center",
-                        "flexDirection": "row",
-                        "justifyContent": "center",
-                      },
-                      undefined,
-                    ]
-                  }
-                >
-                  <Text
-                    numberOfLines={1}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#000000",
-                          "fontFamily": "System",
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "textAlign": "left",
-                        },
-                        Array [
-                          Object {
-                            "letterSpacing": 1,
-                            "marginHorizontal": 16,
-                            "marginVertical": 9,
-                            "textAlign": "center",
-                          },
-                          Object {
-                            "marginHorizontal": 8,
-                          },
-                          Object {
-                            "textTransform": "uppercase",
-                          },
-                          Object {
-                            "color": "#212121",
-                            "fontFamily": "System",
-                            "fontWeight": "500",
-                          },
-                          Object {
-                            "fontFamily": "System",
-                            "fontWeight": "500",
-                          },
-                          undefined,
-                        ],
-                      ]
-                    }
-                  >
-                    Actualizar
-                  </Text>
-                </View>
-              </View>
+                ACTUALIZAR
+              </Text>
             </View>
             <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "backgroundColor": "transparent",
-                  "borderColor": "transparent",
-                  "borderRadius": 4,
-                  "borderStyle": "solid",
-                  "borderWidth": 0,
-                  "elevation": 0,
-                  "minWidth": "auto",
+                  "opacity": 1,
+                  "paddingBottom": 4,
+                  "paddingLeft": 4,
+                  "paddingRight": 4,
+                  "paddingTop": 4,
                 }
               }
             >
-              <View
-                accessibilityRole="button"
-                accessibilityState={
-                  Object {
-                    "disabled": undefined,
-                  }
-                }
-                accessible={true}
-                focusable={true}
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <Text
                 style={
                   Array [
                     Object {
-                      "overflow": "hidden",
-                    },
-                    Object {
-                      "borderRadius": 4,
+                      "color": "#616161",
+                      "fontSize": 14,
+                      "textAlign": "center",
                     },
                   ]
                 }
               >
-                <View
-                  style={
-                    Array [
-                      Object {
-                        "alignItems": "center",
-                        "flexDirection": "row",
-                        "justifyContent": "center",
-                      },
-                      undefined,
-                    ]
-                  }
-                >
-                  <Text
-                    numberOfLines={1}
-                    selectable={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#000000",
-                          "fontFamily": "System",
-                          "fontWeight": "400",
-                        },
-                        Object {
-                          "textAlign": "left",
-                        },
-                        Array [
-                          Object {
-                            "letterSpacing": 1,
-                            "marginHorizontal": 16,
-                            "marginVertical": 9,
-                            "textAlign": "center",
-                          },
-                          Object {
-                            "marginHorizontal": 8,
-                          },
-                          Object {
-                            "textTransform": "uppercase",
-                          },
-                          Object {
-                            "color": "#212121",
-                            "fontFamily": "System",
-                            "fontWeight": "500",
-                          },
-                          Object {
-                            "fontFamily": "System",
-                            "fontWeight": "500",
-                          },
-                          undefined,
-                        ],
-                      ]
-                    }
-                  >
-                    Borrar
-                  </Text>
-                </View>
-              </View>
+                BORRAR
+              </Text>
             </View>
           </View>
         </View>
@@ -2971,4 +2503,81 @@ exports[`Render Snapshoots Index screen behavior 5`] = `
     </View>
   </RCTScrollView>
 </View>
+`;
+
+exports[`Render Snapshoots SnackBar behavior 1`] = `null`;
+
+exports[`Render Snapshoots SnackBar behavior 2`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  pointerEvents="box-none"
+  style={
+    Array [
+      Object {
+        "bottom": 0,
+        "position": "absolute",
+        "width": "100%",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    accessibilityLiveRegion="polite"
+    pointerEvents="box-none"
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#000000",
+        "borderRadius": 4,
+        "elevation": 6,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "margin": 8,
+        "opacity": 0,
+        "shadowColor": "#000000",
+        "shadowOffset": Object {
+          "height": 5,
+          "width": 0,
+        },
+        "shadowOpacity": 0.24,
+        "shadowRadius": 6,
+        "transform": Array [
+          Object {
+            "scale": 0.9,
+          },
+        ],
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+            "fontFamily": "System",
+            "fontWeight": "400",
+          },
+          Object {
+            "textAlign": "left",
+          },
+          Array [
+            Object {
+              "flex": 1,
+              "flexWrap": "wrap",
+              "marginLeft": 16,
+              "marginVertical": 14,
+            },
+            Object {
+              "color": "#ffffff",
+              "marginRight": 16,
+            },
+          ],
+        ]
+      }
+    >
+      Ciudad guardada.
+    </Text>
+  </View>
+</RCTSafeAreaView>
 `;

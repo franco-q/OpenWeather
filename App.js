@@ -6,6 +6,7 @@ import ReduxProvider from './src/redux'
 import Index from './src/screens/Index'
 import Forecast from './src/screens/Forecast'
 import ErrorAlert from './src/components/ErrorAlert'
+import SnackBar from './src/components/SnackBar'
 
 const Stack = createStackNavigator()
 
@@ -28,6 +29,7 @@ const App = () => {
 					</Stack.Navigator>
 				</NavigationContainer>
 				<ErrorAlert />
+				<SnackBar />
 			</PaperProvider>
 		</ReduxProvider>
 	)

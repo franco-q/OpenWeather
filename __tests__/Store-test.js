@@ -404,7 +404,8 @@ describe('Test sagas', () => {
 			cities: [mockedOpenWeather],
 			loading: false,
 			error: null,
-			redirect: null
+			redirect: null,
+			snackbar: null
 		})
 	})
 
@@ -438,7 +439,10 @@ describe('Test sagas', () => {
 			cities: [mockedOpenWeather],
 			loading: false,
 			error: null,
-			redirect: null
+			redirect: null,
+			snackbar: {
+				message: 'Ciudad guardada.'
+			}
 		})
 	})
 
@@ -479,7 +483,10 @@ describe('Test sagas', () => {
 			cities: [mockedOpenWeatherUpdated],
 			loading: false,
 			error: null,
-			redirect: null
+			redirect: null,
+			snackbar: {
+				message: 'Clima actualizado.'
+			}
 		})
 	})
 
@@ -525,7 +532,8 @@ describe('Test sagas', () => {
 			redirect: {
 				screen: 'Forecast',
 				params: { id: mockedOpenWeather.id }
-			}
+			},
+			snackbar: null
 		})
 	})
 })
@@ -547,7 +555,10 @@ describe('State Reducers', () => {
 			cities: [],
 			loading: false,
 			error: null,
-			redirect: null
+			redirect: null,
+			snackbar: {
+				message: 'Ciudad eliminada.'
+			}
 		})
 	})
 })

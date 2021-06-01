@@ -6,6 +6,7 @@ import { create, act } from 'react-test-renderer'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
+import { FlatList } from 'react-native'
 import reducers from '../src/redux/reducers'
 import Index from '../src/screens/Index'
 import {
@@ -14,7 +15,7 @@ import {
 	searchCitySuccess,
 	updateWeatherSuccess
 } from '../src/redux/actions'
-import { FlatList } from 'react-native'
+import SnackBar from '../src/components/SnackBar'
 
 jest.useFakeTimers()
 
@@ -364,7 +365,8 @@ const mockedForecast = {
 const initialStore = {
 	cities: [],
 	loading: false,
-	error: null
+	error: null,
+	snackbar: null
 }
 
 function configureStore(initialState = initialStore) {
@@ -438,6 +440,54 @@ describe('Render Snapshoots', () => {
 			store.getState().cities.length
 		)
 		//Check searchCitySuccess
+		expect(component.toJSON()).toMatchSnapshot()
+	})
+
+	test('SnackBar behavior', () => {
+		const store = configureStore()
+
+		const Component = () => (
+			<Provider store={store}>
+				<SnackBar />
+			</Provider>
+		)
+
+		// Snackbar unwrap
+		const SnackBarWrappedComponent = SnackBar.WrappedComponent
+
+		let component
+
+		act(() => {
+			component = create(<Component />)
+		})
+
+		// Check Snackbar props before searchCitySuccess
+		expect(
+			component.root.findByType(SnackBarWrappedComponent).props
+		).toStrictEqual(
+			expect.objectContaining({
+				snackbar: null,
+				clear: expect.any(Function)
+			})
+		)
+		// Check snapshot before searchCitySuccess
+		expect(component.toJSON()).toMatchSnapshot()
+
+		act(() => {
+			store.dispatch(searchCitySuccess(mockedOpenWeather))
+			component.update(<Component />)
+		})
+
+		// Check Snackbar props after searchCitySuccess
+		expect(
+			component.root.findByType(SnackBarWrappedComponent).props
+		).toStrictEqual(
+			expect.objectContaining({
+				snackbar: { message: expect.any(String) },
+				clear: expect.any(Function)
+			})
+		)
+		// Check snapshot after searchCitySuccess
 		expect(component.toJSON()).toMatchSnapshot()
 	})
 })

@@ -92,3 +92,8 @@ export const removeCityById = id => ({
 	type: REMOVE_CITY_BY_ID,
 	payload: { id }
 })
+
+export const REMOVE_SNACKBAR = 'REMOVE_SNACKBAR'
+export const removeSnackBar = () => ({
+	type: REMOVE_SNACKBAR
+})
