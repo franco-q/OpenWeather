@@ -2,14 +2,15 @@ import React from 'react'
 import styled from 'styled-components/native'
 import {
 	Headline,
-	Button,
 	Title,
 	Subheading,
-	Text,
-	Colors
+	Colors,
+	Caption
 } from 'react-native-paper'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { weatherIcons } from '../constans'
+import InfoBox from './CityDetails/InfoBox'
+import MainIcon from './CityDetails/MainIcon'
+import BtnOption from './CityDetails/BtnOption'
 
 const Container = styled.View`
 	align-items: center;
@@ -25,19 +26,12 @@ const Details = styled.View`
 	width: 100%;
 	justify-content: space-around;
 `
-const Detail = styled.View`
-	align-items: center;
-	flex: 6;
-`
-const MainIcon = styled.View`
-	align-items: center;
-	padding: 8px;
-`
 const Footer = styled.View`
-	padding: 8px;
+	margin-top: 12px;
+	padding: 4px;
 	flex-direction: row;
 	width: 100%;
-	justify-content: space-around;
+	justify-content: space-between;
 `
 
 const CityDetails = ({
@@ -45,16 +39,30 @@ const CityDetails = ({
 	main,
 	weather,
 	wind,
+	dt,
 	onGetForecast,
 	onUpdateWeather,
 	onRemove
 }) => {
+	const day = new Date(dt * 1000)
+
 	const icon =
 		weatherIcons.find(i => weather.some(w => i.id === w.icon)) ||
 		weatherIcons[0]
 
+	const info = [
+		{ icon: 'thermometer-lines', text: `${main.feels_like}°` },
+		{ icon: 'thermometer-minus', text: `${main.temp_min}°` },
+		{ icon: 'thermometer-plus', text: `${main.temp_max}°` },
+		{ icon: 'speedometer', text: `${main.pressure}hPa` },
+		{ icon: 'water-percent', text: `${main.humidity}%` },
+		{ icon: 'weather-windy', text: `${wind.speed}km` }
+	]
 	return (
 		<Container>
+			<Caption>
+				{day.toLocaleDateString('en-GB')} {day.toLocaleTimeString('es-AR')}
+			</Caption>
 			<Title>{name}</Title>
 			{main && (
 				<>
@@ -62,83 +70,20 @@ const CityDetails = ({
 					<Subheading>
 						{weather.map(({ description }) => description).join(', ')}
 					</Subheading>
-					<MainIcon>
-						<Icon
-							name={icon.name}
-							color={icon.color || Colors.grey600}
-							size={6 * 24}
-						/>
-					</MainIcon>
+					<MainIcon icon={icon.name} color={icon.color} />
 					<Details>
-						{main.feels_like && (
-							<Detail>
-								<Icon
-									name="thermometer-lines"
-									color={Colors.grey600}
-									size={24}
-								/>
-								<Text>{main.feels_like}°</Text>
-							</Detail>
-						)}
-						{main.temp_min && (
-							<Detail>
-								<Icon
-									name="thermometer-minus"
-									color={Colors.grey600}
-									size={24}
-								/>
-								<Text>{main.temp_min}°</Text>
-							</Detail>
-						)}
-						{main.temp_max && (
-							<Detail>
-								<Icon
-									name="thermometer-plus"
-									color={Colors.grey600}
-									size={24}
-								/>
-								<Text>{main.temp_max}°</Text>
-							</Detail>
-						)}
-						{main.humidity && (
-							<Detail>
-								<Icon name="water-percent" color={Colors.grey600} size={24} />
-								<Text>{main.humidity}%</Text>
-							</Detail>
-						)}
-						{main.pressure && (
-							<Detail>
-								<Icon name="speedometer" color={Colors.grey600} size={24} />
-								<Text>{main.pressure}hPa</Text>
-							</Detail>
-						)}
-						{wind && (
-							<Detail>
-								<Icon name="weather-windy" color={Colors.grey600} size={24} />
-								<Text>{wind.speed}km</Text>
-							</Detail>
-						)}
+						{info.map(item => (
+							<InfoBox icon={item.icon} key={item.icon}>
+								{item.text}
+							</InfoBox>
+						))}
 					</Details>
 				</>
 			)}
 			<Footer>
-				<Button
-					compact
-					mode="Text"
-					color={Colors.grey900}
-					onPress={onGetForecast}>
-					Ver pronostico
-				</Button>
-				<Button
-					compact
-					mode="Text"
-					color={Colors.grey900}
-					onPress={onUpdateWeather}>
-					Actualizar
-				</Button>
-				<Button compact mode="Text" color={Colors.grey900} onPress={onRemove}>
-					Borrar
-				</Button>
+				<BtnOption onPress={onGetForecast}>VER PRONOSTICO</BtnOption>
+				<BtnOption onPress={onUpdateWeather}>ACTUALIZAR</BtnOption>
+				<BtnOption onPress={onRemove}>BORRAR</BtnOption>
 			</Footer>
 		</Container>
 	)

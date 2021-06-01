@@ -96,6 +96,7 @@ const Index = ({
 						main={item.main}
 						weather={item.weather}
 						wind={item.wind}
+						dt={item.dt}
 						onGetForecast={() => getForecast(item)} //dispatch actions
 						onUpdateWeather={() => updateWeatherById(item.id)} //dispatch actions
 						onRemove={() => removeCity(item.id)} //dispatch actions

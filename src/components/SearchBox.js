@@ -44,7 +44,7 @@ export default ({ onSearch }) => {
 						mode="text"
 						onPress={searchAndClear}
 						disabled={!val || val.length <= 3}>
-						Guardar
+						Buscar
 					</Button>
 				</View>
 			</Row>
